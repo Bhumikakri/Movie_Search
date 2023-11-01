@@ -40,6 +40,7 @@ input{
     box-shadow:2px 3px 5px rgb(12, 12, 10); 
     font-size: 1.2rem;
     color: rgb(255, 251, 0);
+    padding-left: 0.5rem;
 }
 .main{
     width: 100%;
@@ -62,13 +63,91 @@ input{
 }
 .image{
     width: 21%;
-    height: 30%;
+    height: 250px;
     /* border: 2px solid blue; */
     border-radius: 20px;
     box-shadow:2px 3px 5px rgb(12, 12, 10); 
+    position: relative;
+    overflow: hidden;
+    
 }
 .image img{
     width: 100%;
     height: 100%;
     border-radius: 20px;
+    transition: transform 0.5s ease-in;
+}
+.image img:hover{
+    opacity: 0.3;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.next{
+    background-color: aqua;
+    width: 10%;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border: none;
+    height: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow:2px 3px 5px rgb(12, 12, 10); 
+}
+.para{
+    width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+    font-size: 1rem;
+    position: absolute;
+    top: 90%;
+
+}
+#popup{
+    width: 40%;
+    height:auto;
+    border:1px dotted white;
+    background-color: rgba(13, 68, 68, 0.719);
+    position: absolute;
+    left: 30%;
+    top: 13%;
+    border-radius: 20px;
+}
+.pagination{
+    width: 100%;
+    height: auto;
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+.forimg{
+    width: 50%;
+}
+.forimg img{
+    width: 100%;
+    border-radius: 20px;
+}
+.fordtls{
+    color: white;
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+.fordtls span{
+    font-size: 1rem;
+    color: rgb(251, 255, 4);
+}
+.cross{
+    padding: 0.3rem;
+    background-color: transparent;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    background-color: rgb(5, 49, 29);
+    color: rgb(233, 240, 239);
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 3px 4px rgb(44, 41, 41);
 }
