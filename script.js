@@ -9,11 +9,16 @@ let page = 1;
 async function fetchAPI(pg) {
     let search = input.value;
     // console.log(search);
-    let data = null;
+    try {
+        let data = null;
         data = await fetch(` https://www.omdbapi.com/?&apikey=${apiKey}&s=${search}&page=${pg} `);
         data = await data.json()
         viewthose(data);
-        console.log(data);
+        // console.log(data);
+    } catch (error) {
+        // console.log("error");
+
+    }
 }
 // --------try to use debauncing technique for controle events firing -------------------//
 
@@ -78,7 +83,7 @@ function viewthose(data){
 
     })
     btn1.style.display="block";
-// -------------------------for more btns---------------------//
+// ---------------------------------for more btns----------------------------------//
     btn1.addEventListener("click", ()=>{
         page++;
         fetchAPI(page);
@@ -87,7 +92,7 @@ function viewthose(data){
 
 }
 
-// ---------------view details on popup------------------//
+// ------------------------------view details on popup------------------//
 async function fordetails(id){
     pop.innerHTML="";
     let fetchfordtl = await fetch(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=895e59dd`)
@@ -116,9 +121,15 @@ async function fordetails(id){
 
     let cross = document.querySelector(".cross");
     cross.addEventListener("click", ()=>{
-        document.location.reload();
+        // document.location.reload();
+        // Modal();
+        closedilog();
         
     })
 }
 
+
+function closedilog(){
+    pop.close();
+}
 // create by bhumi-------------------😊
